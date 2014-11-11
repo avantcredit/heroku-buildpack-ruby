@@ -510,7 +510,8 @@ WARNING
             "CPPATH"                        => noshellescape("#{yaml_include}:$CPPATH"),
             "LIBRARY_PATH"                  => noshellescape("#{yaml_lib}:$LIBRARY_PATH"),
             "RUBYOPT"                       => syck_hack,
-            "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
+            "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true",
+            "JAVA_HOME"                     => "/usr/lib/jvm/java-6-openjdk"
           }
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
