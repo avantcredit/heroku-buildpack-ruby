@@ -215,9 +215,10 @@ private
         ENV[key] ||= value
       end
 
-      ENV["GEM_PATH"] = slug_vendor_base
-      ENV["GEM_HOME"] = slug_vendor_base
-      ENV["PATH"]     = default_path
+      ENV["GEM_PATH"]  = slug_vendor_base
+      ENV["GEM_HOME"]  = slug_vendor_base
+      ENV["PATH"]      = default_path
+      ENV["JAVA_HOME"] = "/usr/lib/jvm/java-6-openjdk"
     end
   end
 
@@ -510,8 +511,7 @@ WARNING
             "CPPATH"                        => noshellescape("#{yaml_include}:$CPPATH"),
             "LIBRARY_PATH"                  => noshellescape("#{yaml_lib}:$LIBRARY_PATH"),
             "RUBYOPT"                       => syck_hack,
-            "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true",
-            "JAVA_HOME"                     => "/usr/lib/jvm/java-6-openjdk"
+            "NOKOGIRI_USE_SYSTEM_LIBRARIES" => "true"
           }
           env_vars["BUNDLER_LIB_PATH"] = "#{bundler_path}" if ruby_version.ruby_version == "1.8.7"
           puts "Running: #{bundle_command}"
