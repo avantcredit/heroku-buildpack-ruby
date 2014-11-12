@@ -218,7 +218,7 @@ private
       ENV["GEM_PATH"]  = slug_vendor_base
       ENV["GEM_HOME"]  = slug_vendor_base
       ENV["PATH"]      = default_path
-      ENV["JAVA_HOME"] = "/usr/lib/jvm/java-6-openjdk"
+      ENV["JAVA_HOME"] = "/app/.jdk"
     end
   end
 
